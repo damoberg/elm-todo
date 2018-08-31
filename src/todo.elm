@@ -1,7 +1,7 @@
 import Browser
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html exposing (Html, Attribute, button, div, text, input, h1, label, ul, li, span)
+import Html.Attributes exposing (for, style, autocomplete, type_, id, autofocus, value)
+import Html.Events exposing (onDoubleClick, onClick, onSubmit, onInput)
 
 main = Browser.sandbox { init=init, update=update, view=view }
 
@@ -26,18 +26,9 @@ type Msg
 
 init : Model
 init =
-  { todos =
-    [ { label = "Lorem"
-      , completed = False
-      , id = 1
-      }
-    , { label = "Ipsum"
-      , completed = False
-      , id = 2
-      }
-    ]
+  { todos = []
   , input = ""
-  , uid = 3 -- Next ID to be assigned
+  , uid = 1
   }
 
 -- Update
